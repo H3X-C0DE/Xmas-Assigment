@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-// import Countdown from "./components/Countdown";
 import Timer from "./components/Timer";
+import Comment from "./components/Comment";
 function App() {
   return (
     <div className="App">
@@ -10,6 +10,7 @@ function App() {
       </header>
       {/* <Countdown /> */}
       <Timer />
+      <Comment />
     </div>
   );
 }
