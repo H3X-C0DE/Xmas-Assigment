@@ -37,8 +37,8 @@ function CommentSection() {
   }, []);
 
   return (
-    <div>
-      <h2>Comment Section</h2>
+    <div className="comment-section">
+      <h2>Guest Book</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="new-comment">Write a comment:</label>
         <br />
@@ -48,14 +48,19 @@ function CommentSection() {
           onChange={handleChange}
           rows={5}
           cols={50}
+          placeholder="write a little message"
         />
         <br />
-        <button type="submit">Submit</button>
+        <button className="submit-btn" type="submit">
+          Submit
+        </button>
       </form>
       <h3>Comments:</h3>
-      {comments.map((comment, index) => (
-        <p key={index}>{comment}</p>
-      ))}
+      <div className="comments">
+        {comments.map((comment, index) => (
+          <p key={index}>{comment}</p>
+        ))}
+      </div>
     </div>
   );
 }
