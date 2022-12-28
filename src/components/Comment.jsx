@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 function CommentSection() {
-  const [comments, setComments] = useState([]); // Array to store the comments
+  const [comments, setComments] = useState([
+    "First ;) ",
+    "Great Project",
+    "I agree looks great.",
+    "I did something similar to this once",
+    "cool project, keep it up!",
+  ]); // Array to store the comments
   const [newComment, setNewComment] = useState(""); // State to store the new comment being written
 
   // Function to handle the submission of a new comment
