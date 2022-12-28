@@ -10,9 +10,9 @@ function CountdownTimer() {
     const intervalId = setInterval(() => {
       // Get the current date and time
       const now = new Date();
-      // Set the target date and time to Christmas
-      const targetDate = new Date(now.getFullYear(), 11, 24); // 24th of December
-      // If the target date has already passed, set the target date to next year's Christmas
+      // Set the target year, month and day
+      const targetDate = new Date(now.getFullYear(), 12, 1); // 1th of January
+      // If the target date has already passed, set the target date to next year
       if (now > targetDate) {
         targetDate.setFullYear(targetDate.getFullYear() + 1);
       }
@@ -31,10 +31,15 @@ function CountdownTimer() {
   }, []);
 
   return (
-    <p>
-      Christmas is in {days} days, {hours} hours, {minutes} minutes, and{" "}
-      {seconds} seconds.
-    </p>
+    <>
+      <h1>New Year Countdown</h1>
+      <div className="countdown-div">
+        <span id="days">{days}d, </span>
+        <span id="hours">{hours}h, </span>
+        <span id="minutes">{minutes}m, </span>
+        <span>{seconds}s.</span>
+      </div>
+    </>
   );
 }
 
