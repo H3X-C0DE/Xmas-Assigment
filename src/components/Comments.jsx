@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-
+import pfp from "../assets/images/default-pfp.jpg";
 function CommentSection() {
   const startDate = moment().subtract(1, "year");
   const endDate = moment();
@@ -70,16 +70,22 @@ function CommentSection() {
         </button>
       </form>
       <div className="comments">
-        {fakeComments.map(({ text, time }) => (
-          <div className="comment-box" key={time.valueOf()}>
-            <p>{text}</p>
-            <p className="time-stamp">{time.format("YYYY-MM-DD HH:mm:ss")}</p>
-          </div>
-        ))}
         {comments.map(({ text, time }) => (
           <div className="comment-box" key={time.valueOf()}>
-            <p>{text}</p>
-            <p className="time-stamp">{time.format("YYYY-MM-DD HH:mm:ss")}</p>
+            <img src={pfp} alt={pfp} />
+            <div className="info">
+              <p className="time-stamp">{time.format("YYYY-MM-DD HH:mm:ss")}</p>
+              <p className="comment-text">{text}</p>
+            </div>
+          </div>
+        ))}
+        {fakeComments.map(({ text, time }) => (
+          <div className="comment-box" key={time.valueOf()}>
+            <img src={pfp} alt={pfp} />
+            <div className="info">
+              <p className="time-stamp">{time.format("YYYY-MM-DD HH:mm:ss")}</p>
+              <p className="comment-text">{text}</p>
+            </div>
           </div>
         ))}
       </div>
