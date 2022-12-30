@@ -53,43 +53,50 @@ function CommentSection() {
   };
 
   return (
-    <div className="comment-section">
-      <h2>Guest Book</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="comment">Leave a comment:</label>
-        <br />
-        <textarea
-          name="comment"
-          rows={5}
-          cols={50}
-          placeholder="write a little message"
-        />
-        <br />
-        <button className="submit-btn" type="submit">
-          Submit
-        </button>
-      </form>
-      <div className="comments">
-        {comments.map(({ text, time }) => (
-          <div className="comment-box" key={time.valueOf()}>
-            <img src={pfp} alt={pfp} />
-            <div className="info">
-              <p className="time-stamp">{time.format("YYYY-MM-DD HH:mm:ss")}</p>
-              <p className="comment-text">{text}</p>
+    <>
+      <div className="blur-bg"></div>
+      <div className="comment-section">
+        <h2>Guest Book</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="comment">Leave a comment:</label>
+          <br />
+          <textarea
+            name="comment"
+            rows={5}
+            cols={50}
+            placeholder="write a little message"
+          />
+          <br />
+          <button className="submit-btn" type="submit">
+            Submit
+          </button>
+        </form>
+        <div className="comments">
+          {comments.map(({ text, time }) => (
+            <div className="comment-box" key={time.valueOf()}>
+              <img src={pfp} alt={pfp} />
+              <div className="info">
+                <p className="time-stamp">
+                  {time.format("YYYY-MM-DD HH:mm:ss")}
+                </p>
+                <p className="comment-text">{text}</p>
+              </div>
             </div>
-          </div>
-        ))}
-        {fakeComments.map(({ text, time }) => (
-          <div className="comment-box" key={time.valueOf()}>
-            <img src={pfp} alt={pfp} />
-            <div className="info">
-              <p className="time-stamp">{time.format("YYYY-MM-DD HH:mm:ss")}</p>
-              <p className="comment-text">{text}</p>
+          ))}
+          {fakeComments.map(({ text, time }) => (
+            <div className="comment-box" key={time.valueOf()}>
+              <img src={pfp} alt={pfp} />
+              <div className="info">
+                <p className="time-stamp">
+                  {time.format("YYYY-MM-DD HH:mm:ss")}
+                </p>
+                <p className="comment-text">{text}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
