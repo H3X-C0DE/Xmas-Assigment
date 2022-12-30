@@ -66,17 +66,28 @@ h2 {
   max-height: 300px;
   background-color: #c3cddf;
   color: #191c21;
-  max-width: 80vw;
+  max-width: 60vw;
   margin: 0 auto;
   border: 0.1em solid #1a2e52;
 }
-.comments p {
+.comment-box {
   margin: 0.1em;
   font-size: 0.8em;
   padding: 0.5em;
   border-top: 0.1em solid #1a2e52;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column-reverse;
+  min-height: 2em;
 }
-
+.comment-box p {
+  text-align: left;
+}
+.time-stamp {
+  /* position: absolute; */
+  top: 10%;
+  font-size: 0.7em;
+}
 .submit-btn {
   appearance: none;
   backface-visibility: hidden;
