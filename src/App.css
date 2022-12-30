@@ -72,22 +72,32 @@ h2 {
 }
 .comment-box {
   margin: 0.1em;
-  font-size: 0.8em;
   padding: 0.5em;
   border-top: 0.1em solid #1a2e52;
-  /* position: relative; */
   display: flex;
-  flex-direction: column-reverse;
-  min-height: 2em;
+  justify-content: left;
 }
-.comment-box p {
+.comment-box img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+}
+.comment-box .info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.5em;
+}
+.comment-box .comment-text {
   text-align: left;
-}
-.time-stamp {
-  /* position: absolute; */
-  top: 10%;
   font-size: 0.7em;
 }
+.comment-box .time-stamp {
+  font-size: 0.5em;
+  max-width: fit-content;
+  position: relative;
+  top: -0.2em;
+}
+
 .submit-btn {
   appearance: none;
   backface-visibility: hidden;
