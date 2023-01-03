@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import FireButton from "./Firebutton";
 
 function CountdownTimer() {
   const [days, setDays] = useState(0);
@@ -12,9 +13,15 @@ function CountdownTimer() {
       const now = new Date();
       // Set the target year, month and day
       const targetDate = new Date(now.getFullYear(), 12, 1); // 1th of January
+
       // If the target date has already passed, set the target date to next year
-      if (now > targetDate) {
+      if (now >= targetDate) {
         targetDate.setFullYear(targetDate.getFullYear() + 1);
+        document.getElementById("firework-container").style.visibility =
+          "visible";
+      } else {
+        document.getElementById("firework-container").style.visibility =
+          "hidden";
       }
       // Calculate the difference between the target date and the current date
       const difference = targetDate - now;
@@ -32,6 +39,11 @@ function CountdownTimer() {
 
   return (
     <>
+      <div id="firework-container">
+        <div className="firework"></div>
+        <div className="firework"></div>
+        <div className="firework"></div>
+      </div>
       <h1>New Year Countdown</h1>
       <div className="countdown-div">
         <span id="days">{days}d, </span>
@@ -39,6 +51,7 @@ function CountdownTimer() {
         <span id="minutes">{minutes}m, </span>
         <span>{seconds}s.</span>
       </div>
+      <FireButton />
     </>
   );
 }
