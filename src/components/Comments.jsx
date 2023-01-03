@@ -65,6 +65,7 @@ function CommentSection() {
             rows={5}
             cols={50}
             placeholder="write a little message"
+            required
           />
           <br />
           <button className="submit-btn" type="submit">
