@@ -32,7 +32,7 @@ h1 {
   color: white;
   font-weight: bold;
   width: 50%;
-  padding: 20px;
+  padding: 0.5em;
   text-align: center;
 }
 
@@ -69,7 +69,6 @@ h2 {
 .comment-section form {
   display: flex;
   justify-content: center;
-  margin: 1em;
   max-width: 60vw;
   margin: 10px auto;
 }
@@ -472,4 +471,24 @@ h2 {
   left: 70%;
   top: 60%;
   animation-delay: -0.4s;
+}
+
+@media screen and (max-width: 900px) {
+  .countdown-div,
+  h1 {
+    width: 100%;
+  }
+  .comment-section {
+    left: 0;
+  }
+  .comment-section form {
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  .comments {
+    margin: 10px;
+    max-width: 100%;
+    max-height: max-content;
+  }
 }
